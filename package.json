@@ -1,0 +1,32 @@
+{
+  "name": "resume-generator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@mdi/font": "^5.6.55",
+    "@nuxtjs/axios": "^5.12.2",
+    "app-root-path": "^3.0.0",
+    "body-parser": "^1.19.0",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.20",
+    "nuxt": "^2.14.6",
+    "nuxt-buefy": "^0.4.3",
+    "nuxt-i18n": "^6.15.1",
+    "puppeteer": "^5.3.1",
+    "uuid": "^8.3.1",
+    "vue-quill-editor": "^3.0.6",
+    "vuedraggable": "^2.24.2"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "postcss-nested": "^4.2.3",
+    "prettier": "^2.1.2"
+  }
+}
