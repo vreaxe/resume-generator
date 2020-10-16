@@ -65,7 +65,11 @@ export default {
   ],
 
   axios: {
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'http://localhost:2020/api',
+  },
+
+  server: {
+    port: 2020
   },
 
   // Server Middleware
