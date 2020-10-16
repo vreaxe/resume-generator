@@ -190,6 +190,7 @@
 </template>
 
 <script>
+// Theme based in this one: https://s3.resume.io/cdn-cgi/image/width=852,format=auto/uploads/local_template_image/image/503/cbd4ebb3adcd-0.jpg
 export default {
   props: ['resume'],
   methods: {
