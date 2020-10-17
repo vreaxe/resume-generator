@@ -60,4 +60,34 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="postcss">
+/* Quill customizations */
+.quill-editor.focused {
+  .ql-toolbar.ql-snow {
+    border-color: #7957d5 !important;
+  }
+  .ql-container.ql-snow {
+    border-color: #7957d5 !important;
+  }
+}
+.quill-editor {
+  &:hover {
+    .ql-toolbar.ql-snow {
+      border-color: #b5b5b5;
+    }
+    .ql-container.ql-snow {
+      border-color: #b5b5b5;
+    }
+  }
+}
+.ql-toolbar.ql-snow {
+  border-color: #dbdbdb;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.ql-container.ql-snow {
+  border-color: #dbdbdb;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+</style>
