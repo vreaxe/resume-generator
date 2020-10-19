@@ -1,5 +1,8 @@
 <template>
   <div>
+    <b-field label="Image" label-position="on-border">
+      <image-picker :value="resume.image" @input="update('image', $event)" />
+    </b-field>
     <b-field label="Name" label-position="on-border">
       <b-input :value="resume.name" @input="update('name', $event)"></b-input>
     </b-field>
