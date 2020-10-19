@@ -88,7 +88,7 @@
       <section class="col main">
         <div class="introduction" v-if="resume.introduction">
           <h3>{{ $t('about_me') }}</h3>
-          <p class="introduction-content" v-html="resume.introduction" />
+          <div class="introduction-content" v-html="resume.introduction"></div>
         </div>
         <div class="skills" v-if="resume.skills && resume.skills.length">
           <h3>{{ $t('skills') }}</h3>
@@ -282,6 +282,7 @@ a {
   margin-bottom: 20px;
   .introduction-content {
     margin: 5px 0;
+    font-size: 12px;
   }
 }
 
