@@ -5,7 +5,7 @@ export default {
   email: 'Correo',
   websites: 'Sitios web',
   languages: 'Idiomas',
-  education: 'Educación',
+  education: 'Formación',
   profile: 'Perfil',
   about_me: 'Sobre mí',
   skills: 'Habilidades técnicas',
