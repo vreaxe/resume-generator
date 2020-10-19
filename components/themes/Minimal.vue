@@ -251,6 +251,17 @@ a {
 .container {
   display: flex;
   margin: auto -5px 10px;
+
+  >>> ul {
+    list-style: circle;
+  }
+
+  >>> ol,
+  >>> ul {
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
 
 .col {
