@@ -11,8 +11,8 @@ const homedir = os.homedir();
 const appdir = `${homedir}/.resume-generator`
 const resumesdir = `${appdir}/resumes`
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
+app.use(bodyParser.json({ limit: '50mb', extended: true }))
 
 app.get('/resume', (req, res) => {
   const resumes = []
