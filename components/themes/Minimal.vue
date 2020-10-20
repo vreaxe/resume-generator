@@ -1,8 +1,13 @@
 <template>
   <page>
-    <header>
-      <h1>{{ resume.name }} {{ resume.surnames }}</h1>
-      <h2>{{ resume.position }}</h2>
+    <header :class="{'has-image': resume.image}">
+      <div class="header-info">
+        <h1>{{ resume.name }} {{ resume.surnames }}</h1>
+        <h2>{{ resume.position }}</h2>
+      </div>
+      <div class="header-image">
+        <img class="image" v-if="resume.image" :src="resume.image" />
+      </div>
     </header>
     <div class="container">
       <aside class="col sidebar">
@@ -223,12 +228,30 @@ export default {
   },
 }
 </script>
+<style lang="postcss">
+@page:first{
+  margin-bottom: 1cm !important;
+};
+</style>
 
 <style lang="postcss" scoped>
 header {
   text-align: center;
   margin: 0 150px;
   padding: 40px 0;
+  &.has-image {
+    display: flex;
+    align-items: center;
+    .header-info {
+      text-align: left;
+    }
+    .header-image {
+      margin-left: 75px;
+      .image {
+        height: 135px;
+      }
+    }
+  }
 }
 h1 {
   font-weight: bold;
