@@ -68,6 +68,7 @@ export default {
 <style lang="postcss" scoped>
 .upload {
   >>> .section {
+    text-align: center;
     padding: 1.5rem;
     .show-image {
       position: relative;
