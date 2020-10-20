@@ -1,6 +1,7 @@
 export default {
   profile: 'Profile',
   location: 'Location',
+  birthdate: 'Birthdate',
   phone: 'Phone',
   email: 'Email',
   websites: 'Websites',
