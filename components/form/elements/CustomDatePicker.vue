@@ -18,7 +18,9 @@ export default {
   computed: {
     computedValue: {
       get() {
-        return this.newValue
+        let newValue = this.newValue
+        if (typeof newValue === 'string') newValue = new Date(this.newValue)
+        return newValue
       },
       set(value) {
         this.newValue = value
