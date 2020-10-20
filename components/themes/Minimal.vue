@@ -9,6 +9,7 @@
         <div
           class="info"
           v-if="
+            resume.birthdate ||
             resume.location ||
             resume.phone ||
             resume.email ||
@@ -16,6 +17,10 @@
           "
         >
           <h3>{{ $t('info') }}</h3>
+          <div class="info-item" v-if="resume.birthdate">
+            <p class="info-title">{{ $t('birthdate') }}</p>
+            <p>{{ fortmatBirthdate(resume.birthdate) }}</p>
+          </div>
           <div class="info-item" v-if="resume.location">
             <p class="info-title">{{ $t('location') }}</p>
             <p>{{ resume.location }}</p>
@@ -209,6 +214,12 @@ export default {
         return this.$t('low')
       }
     },
+    fortmatBirthdate(d) {
+      const date = new Date(d);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+      return date.toLocaleDateString(this.resume.language, options);
+    }
   },
 }
 </script>

@@ -1,6 +1,7 @@
 export default {
   info: 'Información',
   location: 'Ubicación',
+  birthdate: 'Fecha de nacimiento',
   phone: 'Teléfono',
   email: 'Correo',
   websites: 'Sitios web',
