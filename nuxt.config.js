@@ -26,7 +26,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/register-themes', 
-    { src: '@/plugins/quill-plugin', ssr: false }
+    { src: '@/plugins/quill-plugin', ssr: false },
+    { src: '@/plugins/datepicker-component-plugin', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
