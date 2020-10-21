@@ -47,7 +47,7 @@
                 :max="10"
                 ticks
                 :value="skill.level"
-                @input="update(`skills[${index}].level`, $event)"
+                @dragging="update(`skills[${index}].level`, $event)"
               ></b-slider>
             </b-field>
           </div>

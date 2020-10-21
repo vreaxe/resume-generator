@@ -47,7 +47,7 @@
                 :max="10"
                 ticks
                 :value="language.level"
-                @input="update(`languages[${index}].level`, $event)"
+                @dragging="update(`languages[${index}].level`, $event)"
               ></b-slider>
             </b-field>
           </div>

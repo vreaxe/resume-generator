@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import cloneDeep from 'lodash/cloneDeep'
-import get from 'lodash/get'
 import set from 'lodash/set'
 
 export const state = () => ({
   list: [],
-  current: {}
+  current: {},
+  saved: true,
 })
 
 export const actions = {
@@ -21,10 +21,12 @@ export const actions = {
 
   updateCurrent({commit}, payload) {
     commit('updateCurrent', payload)
+    commit('setSaved', false)
   },
 
   deleteItemCurrent({commit}, payload) {
     commit('deleteItemCurrent', payload)
+    commit('setSaved', false)
   },
 
   async delete({commit}, {id}) {
@@ -39,6 +41,7 @@ export const actions = {
 
   async saveFile({commit}, {id, resume}) {
     await this.$axios.post(`/resume/${id}`, {resume})
+    commit('setSaved', true)
   },
 }
 
@@ -59,5 +62,9 @@ export const mutations = {
   
   setList(state, list) {
     state.list = list
+  },
+
+  setSaved(state, value) {
+    state.saved = value
   },
 }
