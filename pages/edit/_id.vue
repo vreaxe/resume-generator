@@ -54,6 +54,15 @@ export default {
         value: 'minimal',
       })
     }
+
+    if (process.client) {
+      window.addEventListener('beforeunload', (event) => {
+        if (!this.$store.state.resume.saved) {
+          event.preventDefault();
+          event.returnValue = '';
+        }
+      });
+    }
   },
 
   mounted() {
@@ -85,7 +94,7 @@ export default {
       e.preventDefault()
       this.$store.dispatch('resume/saveFile', {
         id: this.$route.params.id,
-        resume: this.$store.state.resume.current,
+        resume: this.resume,
       })
     },
   },
