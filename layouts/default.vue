@@ -26,31 +26,36 @@
           <div class="navbar-item">
             <div class="buttons">
               <b-button
+                title="Create file"
                 type="is-primary is-light"
                 v-if="$route.name == 'index'"
-                @click="addFile"
+                @click="createFile"
               >
-                <span class="icon">
-                  <i class="mdi mdi-plus"></i>
-                </span>
+                <b-icon icon="plus" size="is-small"> </b-icon>
               </b-button>
               <b-button
+                title="Save"
                 type="is-primary is-light"
                 v-if="$route.name == 'edit-id'"
                 @click="saveFile"
               >
-                <span class="icon">
-                  <i class="mdi mdi-content-save"></i>
-                </span>
+                <b-icon icon="content-save" size="is-small"> </b-icon>
               </b-button>
               <b-button
+                title="Export to PNG"
+                type="is-primary is-light"
+                v-if="$route.name == 'edit-id'"
+                @click="goPng"
+              >
+                <b-icon icon="image-size-select-actual" size="is-small"> </b-icon>
+              </b-button>
+              <b-button
+                title="Export to PDF"
                 type="is-primary is-light"
                 v-if="$route.name == 'edit-id'"
                 @click="goPDF"
               >
-                <span class="icon">
-                  <i class="mdi mdi-pdf-box"></i>
-                </span>
+                <b-icon icon="pdf-box" size="is-small"> </b-icon>
               </b-button>
             </div>
           </div>
@@ -66,7 +71,7 @@
 <script>
 export default {
   methods: {
-    addFile() {
+    createFile() {
       this.$store.dispatch('resume/createFile')
     },
 
@@ -82,7 +87,16 @@ export default {
         id: this.$route.params.id,
         resume: this.$store.state.resume.current,
       })
-      const win = window.open(`/api/pdf/${this.$route.params.id}`, '_blank')
+      let win = window.open(`/api/pdf/${this.$route.params.id}`, '_blank')
+      win.focus()
+    },
+
+    goPng() {
+      this.$store.dispatch('resume/saveFile', {
+        id: this.$route.params.id,
+        resume: this.$store.state.resume.current,
+      })
+      let win = window.open(`/api/png/${this.$route.params.id}`, '_blank')
       win.focus()
     },
   },

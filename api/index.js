@@ -93,6 +93,26 @@ app.get('/pdf/:id', async (req, res) => {
   res.send(pdf);
 })
 
+app.get('/png/:id', async (req, res) => {
+  const url = `${req.protocol}://${req.get('host')}/print/${req.params.id}`
+
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(url, {
+    waitUntil: "networkidle2"
+  });
+  const screenshot = await page.screenshot({
+    omitBackground: true,
+    encoding: 'binary',
+    fullPage: true
+  });
+
+  await browser.close();
+
+  res.contentType("image/png");
+  res.send(screenshot);
+})
+
 module.exports = app
 
 if (require.main === module) {
