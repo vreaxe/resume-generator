@@ -11,9 +11,11 @@
         <a
           role="button"
           class="navbar-burger burger"
+          :class="{'is-active': mobileMenuActive}"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbar-main"
+          @click="toggleMenu"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -21,7 +23,7 @@
         </a>
       </div>
 
-      <div id="navbar-main" class="navbar-menu">
+      <div id="navbar-main" class="navbar-menu" :class="{'is-active': mobileMenuActive}">
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
@@ -70,7 +72,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      mobileMenuActive: false
+    }
+  },
+
   methods: {
+    toggleMenu() {
+      this.mobileMenuActive = !this.mobileMenuActive
+    },
+
     createFile() {
       this.$store.dispatch('resume/createFile')
     },
