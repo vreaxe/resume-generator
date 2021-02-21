@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const os = require('os')
 const { v4: uuidv4 } = require('uuid');
 const puppeteer = require("puppeteer");
-const appRoot = require('app-root-path');
 
 const app = express()
 const homedir = os.homedir();
