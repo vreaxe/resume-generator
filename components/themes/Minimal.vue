@@ -1,6 +1,6 @@
 <template>
   <page>
-    <header :class="{'has-image': resume.image}">
+    <header :class="{ 'has-image': resume.image }">
       <div class="header-info">
         <h1>{{ resume.name }} {{ resume.surnames }}</h1>
         <h2>{{ resume.position }}</h2>
@@ -220,11 +220,11 @@ export default {
       }
     },
     fortmatBirthdate(d) {
-      const date = new Date(d);
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const date = new Date(d)
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
 
-      return date.toLocaleDateString(this.resume.language, options);
-    }
+      return date.toLocaleDateString(this.resume.language, options)
+    },
   },
 }
 </script>

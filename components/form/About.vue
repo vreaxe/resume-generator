@@ -13,9 +13,10 @@
       ></b-input>
     </b-field>
     <b-field label="Birthdate" label-position="on-border">
-      <custom-date-picker 
+      <custom-date-picker
         :value="resume.birthdate"
-        @input="update('birthdate', $event)" />
+        @input="update('birthdate', $event)"
+      />
     </b-field>
     <b-field label="Job Position" label-position="on-border">
       <b-input

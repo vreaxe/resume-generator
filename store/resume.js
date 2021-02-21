@@ -9,38 +9,38 @@ export const state = () => ({
 })
 
 export const actions = {
-  async getList({commit}) {
+  async getList({ commit }) {
     const res = await this.$axios.get('/resume')
     commit('setList', res.data)
   },
 
-  async getCurrent({commit}, {id}) {
+  async getCurrent({ commit }, { id }) {
     const res = await this.$axios.get(`/resume/${id}`)
     commit('setCurrent', res.data)
   },
 
-  updateCurrent({commit}, payload) {
+  updateCurrent({ commit }, payload) {
     commit('updateCurrent', payload)
     commit('setSaved', false)
   },
 
-  deleteItemCurrent({commit}, payload) {
+  deleteItemCurrent({ commit }, payload) {
     commit('deleteItemCurrent', payload)
     commit('setSaved', false)
   },
 
-  async delete({commit}, {id}) {
+  async delete({ commit }, { id }) {
     await this.$axios.delete(`/resume/${id}`)
   },
 
   async createFile() {
     const res = await this.$axios.post('/create-file')
-    const id = res.data.filename.split(".")[0]
-    this.$router.push({name: 'edit-id', params: { id }})
+    const id = res.data.filename.split('.')[0]
+    this.$router.push({ name: 'edit-id', params: { id } })
   },
 
-  async saveFile({commit}, {id, resume}) {
-    await this.$axios.post(`/resume/${id}`, {resume})
+  async saveFile({ commit }, { id, resume }) {
+    await this.$axios.post(`/resume/${id}`, { resume })
     commit('setSaved', true)
   },
 }
@@ -50,16 +50,16 @@ export const mutations = {
     state.current = current
   },
 
-  updateCurrent(state, {property, value}) {
+  updateCurrent(state, { property, value }) {
     const copyCurrent = cloneDeep(state.current)
     set(copyCurrent, property, value)
-    Vue.set(state, 'current', copyCurrent);
+    Vue.set(state, 'current', copyCurrent)
   },
 
-  deleteItemCurrent(state, {property, index}) {
+  deleteItemCurrent(state, { property, index }) {
     state.current[property].splice(index, 1)
   },
-  
+
   setList(state, list) {
     state.list = list
   },

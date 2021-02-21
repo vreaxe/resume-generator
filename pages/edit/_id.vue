@@ -58,10 +58,10 @@ export default {
     if (process.client) {
       window.addEventListener('beforeunload', (event) => {
         if (!this.$store.state.resume.saved) {
-          event.preventDefault();
-          event.returnValue = '';
+          event.preventDefault()
+          event.returnValue = ''
         }
-      });
+      })
     }
   },
 

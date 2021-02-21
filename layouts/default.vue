@@ -11,7 +11,7 @@
         <a
           role="button"
           class="navbar-burger burger"
-          :class="{'is-active': mobileMenuActive}"
+          :class="{ 'is-active': mobileMenuActive }"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbar-main"
@@ -23,7 +23,11 @@
         </a>
       </div>
 
-      <div id="navbar-main" class="navbar-menu" :class="{'is-active': mobileMenuActive}">
+      <div
+        id="navbar-main"
+        class="navbar-menu"
+        :class="{ 'is-active': mobileMenuActive }"
+      >
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
@@ -49,7 +53,8 @@
                 v-if="$route.name == 'edit-id'"
                 @click="goPng"
               >
-                <b-icon icon="image-size-select-actual" size="is-small"> </b-icon>
+                <b-icon icon="image-size-select-actual" size="is-small">
+                </b-icon>
               </b-button>
               <b-button
                 title="Export to PDF"
@@ -74,7 +79,7 @@
 export default {
   data() {
     return {
-      mobileMenuActive: false
+      mobileMenuActive: false,
     }
   },
 

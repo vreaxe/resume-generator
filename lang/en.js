@@ -16,5 +16,5 @@ export default {
   native: 'Native',
   high: 'High',
   medium: 'Medium',
-  low: 'Low'
+  low: 'Low',
 }

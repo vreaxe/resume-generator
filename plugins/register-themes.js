@@ -2,7 +2,7 @@ import Vue from 'vue'
 import camelCase from 'lodash/camelCase'
 import upperFirst from 'lodash/upperFirst'
 
-export default function() {
+export default function () {
   const requireComponentThemes = require.context(
     '@/components/themes',
     false,
@@ -22,4 +22,3 @@ export default function() {
     Vue.component(componentName, componentConfig.default || componentConfig)
   })
 }
-
