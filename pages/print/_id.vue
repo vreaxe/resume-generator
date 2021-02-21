@@ -10,6 +10,10 @@ export default {
     await store.dispatch('resume/getCurrent', { id: params.id })
   },
 
+  created() {
+    this.$i18n.setLocale(this.resume.language)
+  },
+
   computed: {
     resume() {
       return this.$store.state.resume.current
